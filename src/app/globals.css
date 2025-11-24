@@ -1,25 +1,71 @@
 @import "tailwindcss";
 
 :root {
+  /* Base Colors */
   --background: #ffffff;
-  --foreground: #171717;
-  --everlend-green: #0f392b;
-  --everlend-gold: #c5a059;
-  --everlend-light: #f8f9fa;
+  --foreground: #1a1a1a;
+
+  /* Brand Colors */
+  --primary: #0f392b; /* Deep Green */
+  --primary-light: #1a4d3a;
+  --primary-dark: #082018;
+  
+  --accent: #c5a059; /* Muted Gold */
+  --accent-light: #d4b475;
+  --accent-dark: #a38240;
+
+  /* Functional Colors */
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  
+  /* Section Backgrounds */
+  --bg-page: #ffffff;
+  --bg-section: #f8f9fa;
+  --bg-elevated: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-everlend-green: var(--everlend-green);
-  --color-everlend-gold: var(--everlend-gold);
-  --color-everlend-light: var(--everlend-light);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  
+  --color-page: var(--bg-page);
+  --color-section: var(--bg-section);
+  --color-elevated: var(--bg-elevated);
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-slide-up: slide-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
