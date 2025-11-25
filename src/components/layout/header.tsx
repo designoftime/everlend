@@ -23,7 +23,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b bg-white/100 backdrop-blur-md">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {/* <span className="text-2xl font-bold text-everlend-green">EverLend</span> */}

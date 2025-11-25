@@ -50,10 +50,10 @@ export function DebtViz() {
           <div className="bg-white rounded-2xl p-8 shadow-xl border border-border/50">
             <h3 className="text-xl font-bold text-center mb-8 text-primary">Monthly Payment Comparison</h3>
             
-            <div className="flex justify-center items-end gap-8 h-[300px] mb-8">
+            <div className="flex justify-center items-end gap-8 h-auto mb-8">
               {/* Before Bar */}
               <div className="flex flex-col items-center gap-2 w-32 group">
-                <div className="text-red-500 font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity">$2,800</div>
+                <div className="text-red-500 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity">$2,800</div>
                 <motion.div 
                   initial={{ height: 0 }}
                   whileInView={{ height: "100%" }}
@@ -80,7 +80,7 @@ export function DebtViz() {
 
               {/* After Bar */}
               <div className="flex flex-col items-center gap-2 w-32 group">
-                <div className="text-green-600 font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity">$1,450</div>
+                <div className="text-green-600 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity">$1,450</div>
                 <motion.div 
                   initial={{ height: 0 }}
                   whileInView={{ height: "52%" }} // 1450/2800 approx 52%

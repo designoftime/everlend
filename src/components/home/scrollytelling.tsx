@@ -105,7 +105,7 @@ function ScrollItem({ item, index }: { item: typeof items[0], index: number }) {
             <img 
               src={item.image} 
               alt={item.title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 md:aspect-3/4 aspect-square"
             />
           </div>
           <div className="p-8 flex flex-col justify-center">

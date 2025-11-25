@@ -16,7 +16,7 @@ export function HomeHero() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-primary text-white">
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-white">
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y: y1 }}
@@ -84,15 +84,17 @@ export function HomeHero() {
 
             {/* Orbiting Nodes */}
             <OrbitingNode angle={0} delay={0} icon={CreditCard} label="Consolidate Debt" />
-            <OrbitingNode angle={120} delay={1} icon={Hammer} label="Renovate" />
-            <OrbitingNode angle={240} delay={2} icon={GraduationCap} label="Invest/Tuition" />
+            <OrbitingNode angle={0} delay={0.7} icon={Hammer} label="Renovate" />
+            <OrbitingNode angle={0} delay={1.6} icon={GraduationCap} label="Invest/Tuition" />
+            <OrbitingNode angle={0} delay={2.3} icon={GraduationCap} label="Management" />
+            <OrbitingNode angle={0} delay={3} icon={GraduationCap} label="Retirement" />
             
             {/* Connecting Lines (SVG) */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
               <motion.circle 
                 cx="50%" 
                 cy="50%" 
-                r="150" 
+                r="250" 
                 fill="none" 
                 stroke="rgba(255,255,255,0.1)" 
                 strokeWidth="1" 
@@ -108,7 +110,7 @@ export function HomeHero() {
       {/* Scroll Indicator */}
       <motion.div 
         style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50"
+        className="absolute md:bottom-10 bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50"
       >
         <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
         <motion.div 
@@ -136,7 +138,7 @@ function OrbitingNode({ angle, delay, icon: Icon, label }: { angle: number, dela
       }}
     >
       <motion.div
-        className="absolute -top-[150px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute -top-[250px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ rotate: -angle }} // Counter-rotate to keep upright? No, we want it to rotate with the orbit but keep text upright.
       >
          <motion.div 

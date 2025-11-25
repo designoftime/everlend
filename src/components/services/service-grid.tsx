@@ -32,7 +32,7 @@ export function ServiceGrid({ services }: { services: Service[] }) {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
           >
-            <Card variant="elevated" className="h-full flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+            <Card variant="elevated" className="relative h-full flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500" />
               
               <CardHeader>

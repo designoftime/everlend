@@ -10,14 +10,14 @@ interface PageHeroProps {
 
 export function PageHero({ title, description, className, backgroundImage }: PageHeroProps) {
   return (
-    <div className={cn("relative bg-everlend-green py-20 md:py-32 overflow-hidden", className)}>
+    <div className={cn("relative bg-everlend-green py-20 md:py-32 overflow-hidden mt-16", className)}>
       {backgroundImage && (
         <div 
           className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/95 z-0" />
       <Container className="relative z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-serif">
           {title}
