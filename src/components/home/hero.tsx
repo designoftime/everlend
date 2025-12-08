@@ -5,18 +5,39 @@ import { ArrowRight, Home, CreditCard, Hammer, GraduationCap } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef , useState } from "react";
+import "./form.css";
 
 export function HomeHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
+
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    homeValue: "",
+    currentMortgage: "",
+    newAmount: "",
+  });
+
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(`Thank you ${form.name}, your request is submitted!`);
+  };
   
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-white">
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-white sm:h-[115dvh] ">
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y: y1 }}
@@ -30,14 +51,14 @@ export function HomeHero() {
       </motion.div>
 
       <Container className="relative z-20 pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center md:grid-cols-2 ">
           
           {/* Text Content */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            className="space-y-8 h-[80dvh]"
           >
             <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight">
               Unlock the <br />
@@ -45,7 +66,7 @@ export function HomeHero() {
               in your home.
             </h1>
             <p className="text-xl text-gray-200 max-w-lg leading-relaxed">
-              Your home is more than just a place to live—it's your most powerful financial asset. We help you access your equity to build the future you deserve.
+              Your home is more than just a place to live-it's your most powerful financial asset. We help you access your equity to build the future you deserve.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" variant="secondary" className="text-lg px-8 h-14" asChild>
@@ -59,52 +80,96 @@ export function HomeHero() {
             </div>
           </motion.div>
 
-          {/* Equity Flow Animation */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[500px] w-full hidden lg:block"
-          >
-            {/* Central House Node */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <motion.div 
-                animate={{ 
-                  boxShadow: ["0 0 0 0px rgba(197, 160, 89, 0.2)", "0 0 0 20px rgba(197, 160, 89, 0)"]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl relative"
-              >
-                <Home className="w-12 h-12 text-primary" />
-                <div className="absolute -bottom-8 text-sm font-bold text-white bg-accent px-3 py-1 rounded-full">
-                  Your Equity
-                </div>
-              </motion.div>
+          {/* Input Form */}
+
+            <div 
+              className="form-card 
+                w-full 
+                lg:h-full 
+                lg:w-full 
+                md:w-full 
+                mx-auto 
+                p-3 
+                rounded-xl 
+                space-y-4
+                md:h-[80dvh]
+                lg:ml-[16%]
+                lg:block
+                max-sm:hidden
+                sm:h-[110%]
+            ">
+
+              <h1 className="text-2xl font-bold ">CONTACT US</h1>
+              <p className="text-sm opacity-80">Fill the form below and we'll get back to you.</p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={form.name}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black h-full "
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={form.phone}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black"
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={form.email}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black"
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="homeValue"
+                  placeholder="Home Value"
+                  value={form.homeValue}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black"
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="currentMortgage"
+                  placeholder="Current Mortgage Balance"
+                  value={form.currentMortgage}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black"
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="newAmount"
+                  placeholder="New Amount Requesting"
+                  value={form.newAmount}
+                  className="w-full px-4 py-3 rounded-lg bg-white text-black"
+                  onChange={handleChange}
+                />
+
+                <button
+                  type="submit"
+                  className="w-full py-3 bg-accent text-white font-semibold rounded-lg"
+                >
+                  SUBMIT
+                </button>
+
+              </form>
             </div>
 
-            {/* Orbiting Nodes */}
-            <OrbitingNode angle={0} delay={0} icon={CreditCard} label="Consolidate Debt" />
-            <OrbitingNode angle={0} delay={0.7} icon={Hammer} label="Renovate" />
-            <OrbitingNode angle={0} delay={1.6} icon={GraduationCap} label="Invest/Tuition" />
-            <OrbitingNode angle={0} delay={2.3} icon={GraduationCap} label="Management" />
-            <OrbitingNode angle={0} delay={3} icon={GraduationCap} label="Retirement" />
-            
-            {/* Connecting Lines (SVG) */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
-              <motion.circle 
-                cx="50%" 
-                cy="50%" 
-                r="250" 
-                fill="none" 
-                stroke="rgba(255,255,255,0.1)" 
-                strokeWidth="1" 
-                strokeDasharray="5 5"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              />
-            </svg>
-          </motion.div>
         </div>
+
       </Container>
       
       {/* Scroll Indicator */}

@@ -11,8 +11,8 @@ export interface Service {
 export const services: Service[] = [
     {
         slug: "mortgage-pre-approval",
-        title: "Mortgage Pre-Approval",
-        shortDescription: "Get a clear picture of how much home you can afford before you start searching.",
+        title: "Debt Consolidation",
+        shortDescription: "Get rid of high interest debt with a lower rate! Let us show you how to improve your credit score! Low monthly payments allow you to break free!",
         longDescription: "We analyze your income, credit, and financial profile to provide a fast and accurate pre-approval, strengthening your offer and boosting your confidence.",
         benefits: [
             "Know your exact budget before hunting",
@@ -29,8 +29,8 @@ export const services: Service[] = [
     },
     {
         slug: "home-purchase-mortgage",
-        title: "Home Purchase Mortgage",
-        shortDescription: "Secure competitive rates and tailor-made mortgage solutions.",
+        title: "Mortgage Refinance",
+        shortDescription: "First, second mortgage, third mortgage - we consolidate your mortgages and provide one mortgage solution with an overall lower monthly payment. Break free from high interest - high monthly payments!",
         longDescription: "Whether it’s a condo, townhouse, or detached home, we secure competitive rates and tailor-made mortgage solutions that match your goals, timeline, and lifestyle.",
         benefits: [
             "Access to 50+ lenders",
@@ -47,8 +47,8 @@ export const services: Service[] = [
     },
     {
         slug: "refinance-equity-take-out",
-        title: "Refinance & Equity Take-Out",
-        shortDescription: "Tap into your home’s equity for renovations, debt consolidation, or investment.",
+        title: "Home Renovation Loans",
+        shortDescription: "Funds for home improvements and renovations! Make your home work for you! You deserve that home makeover with a fast, simple - low payment solution!",
         longDescription: "We help you unlock funds at the best possible rates without unnecessary stress. Use your home equity to pay off high-interest debt, renovate, or invest.",
         benefits: [
             "Lower your monthly payments",
@@ -65,8 +65,8 @@ export const services: Service[] = [
     },
     {
         slug: "mortgage-renewal",
-        title: "Mortgage Renewal",
-        shortDescription: "Don’t settle for your lender’s first offer. We shop around for you.",
+        title: "Investment Loan",
+        shortDescription: "Low rate investment loans to capitalize in the markets!  Let your home - work for you with one low monthly payment.  Obtain low rates to diversify your investment strategies and obtain financial freedom!  Low rates for your dream business to even cryptocurrencies!  Let us help you make your dreams reality!",
         longDescription: "We review your options across multiple lenders to find a lower rate or better terms — potentially saving you thousands over the life of your mortgage.",
         benefits: [
             "Better rates than auto-renewal",
@@ -83,8 +83,8 @@ export const services: Service[] = [
     },
     {
         slug: "investment-property-financing",
-        title: "Investment Property Financing",
-        shortDescription: "Grow your real-estate portfolio with flexible lending options.",
+        title: "Emergency Loan",
+        shortDescription: "No questions asked about loans - for that cash-out emergency - whatever the case - 'no questions asked' - let's make sure you have the lowest rate!",
         longDescription: "We structure deals that improve cash flow, reduce risk, and maximize long-term returns for rental properties or secondary homes.",
         benefits: [
             "Rental offset calculations",
@@ -101,8 +101,8 @@ export const services: Service[] = [
     },
     {
         slug: "self-employed-mortgages",
-        title: "Self-Employed Mortgages",
-        shortDescription: "Income-flexible solutions designed for entrepreneurs and business owners.",
+        title: "Mortgage Arrears/Evictions",
+        shortDescription: "Get back on track and stay in your home with one low monthly payment.  Let us help you bring arrear payments on any debt up to date - including saving the keys to your home!  Low rate mortgages for arrears immediately!",
         longDescription: "If you’re self-employed, traditional banks may make borrowing harder — EverLend doesn’t. We offer solutions that understand your business income.",
         benefits: [
             "Stated income programs",
@@ -119,8 +119,8 @@ export const services: Service[] = [
     },
     {
         slug: "new-immigrant-mortgages",
-        title: "New Immigrant Mortgages",
-        shortDescription: "We help newcomers secure financing even with limited credit history.",
+        title: "Unemployed Loans",
+        shortDescription: "Loans for that rainy day - to assist you till the sun is shining again!  Let us bring some light into your life with a quick cash-in hand low rate loan!",
         longDescription: "New to Canada? We match you with programs built specifically for new immigrants to help you buy your first Canadian home.",
         benefits: [
             "New to Canada programs",
@@ -137,8 +137,8 @@ export const services: Service[] = [
     },
     {
         slug: "private-alternative-lending",
-        title: "Private & Alternative Lending",
-        shortDescription: "Access to trusted private lenders and alternative mortgage solutions.",
+        title: "Prepaid Loans",
+        shortDescription: "Take a vacation from monthly mortgage payments and have your home make your payment for you!  No monthly payment mortgage - tailored for your needs!",
         longDescription: "For clients who don’t fit traditional lending guidelines, we provide access to trusted private lenders, B-lenders, and alternative mortgage solutions.",
         benefits: [
             "Flexible approval criteria",

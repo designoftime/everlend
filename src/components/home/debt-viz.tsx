@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, XCircle } from "lucide-react";
+import { useState } from "react";
 
 export function DebtViz() {
+
+  const [hovered , setHovered] = useState(true);
+
   return (
     <section className="bg-section py-20 md:py-32">
       <Container>
@@ -47,13 +51,29 @@ export function DebtViz() {
           </div>
 
           {/* Visualization Chart */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl border border-border/50">
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-border/50 flex items-center justify-evenly flex-col ">
             <h3 className="text-xl font-bold text-center mb-8 text-primary">Monthly Payment Comparison</h3>
+
+            <img src={ 
+                  hovered ? 
+                  "https://images.vexels.com/media/users/3/143065/isolated/svg/c6cbc8cf5ca3856bca8d5f28c0471fca.svg"
+                  : 
+                  "https://images.vexels.com/media/users/3/129159/isolated/svg/b6536fdfc4c89f86e1ecf2fa85f2ca95.svg" 
+                    }
+                alt="chart" 
+                className="object-cover h-[20rem] w-full aspect-video md:mb-2"
+            />
             
             <div className="flex justify-center items-end gap-8 h-auto mb-8">
               {/* Before Bar */}
               <div className="flex flex-col items-center gap-2 w-32 group">
-                <div className="text-red-500 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity">$2,800</div>
+                <div 
+                  onClick={() => setHovered(false)}
+                  // onMouseOut={() => setHovered(true)}
+                  className="text-red-500 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity"
+                >
+                  $2,800
+                </div>
                 <motion.div 
                   initial={{ height: 0 }}
                   whileInView={{ height: "100%" }}
@@ -80,7 +100,13 @@ export function DebtViz() {
 
               {/* After Bar */}
               <div className="flex flex-col items-center gap-2 w-32 group">
-                <div className="text-green-600 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity">$1,450</div>
+
+                <div 
+                  className="text-green-600 font-bold mb-2 opacity-100 group-hover:bg-gray-400/20 py-4 px-4 rounded-md transition-opacity"
+                  onClick={() => setHovered(true)}
+                >
+                  $1,450
+                </div>
                 <motion.div 
                   initial={{ height: 0 }}
                   whileInView={{ height: "52%" }} // 1450/2800 approx 52%

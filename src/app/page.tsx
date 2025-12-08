@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, 6).map((service, index) => (
+            {services.slice(0, 8).map((service, index) => (
               <Card
                 key={service.slug}
                 className="hover:shadow-md transition-shadow border-none shadow-sm"
