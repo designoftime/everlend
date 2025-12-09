@@ -60,7 +60,7 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
+//console.log('hi')
   return (
     <div className="flex flex-col">
       <PageHero 
