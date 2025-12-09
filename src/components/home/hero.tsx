@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Home, CreditCard, Hammer, GraduationCap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import Link from "next/link";
@@ -37,13 +37,13 @@ export function HomeHero() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-white sm:h-[115dvh] ">
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-white sm:h-[115dvh]">
       {/* Background Image with Parallax */}
       <motion.div 
         style={{ y: y1 }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/95 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/75 z-10" />
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/hero-home.jpg')" }}

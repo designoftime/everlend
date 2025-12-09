@@ -6,9 +6,9 @@
   --foreground: #1a1a1a;
 
   /* Brand Colors */
-  --primary: #0f392b; /* Deep Green */
-  --primary-light: #1a4d3a;
-  --primary-dark: #082018;
+  --primary: #258565; /* Deep Green */
+  --primary-light: #2ab888;
+  --primary-dark: rgb(16, 114, 81);
   
   --accent: #c5a059; /* Muted Gold */
   --accent-light: #d4b475;
